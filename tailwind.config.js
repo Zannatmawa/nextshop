@@ -8,17 +8,17 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                primary: "#c7522a",   // main brand color
-                secondary: "#e5c185", // soft gold accent
-                light: "#fbf2c4",     // soft background
-                dark: "#0B1120",      // dark sections / footer
-                card: "#111827",      // cards on dark
-                muted: "#9CA3AF",     // text gray
+                primary: "#800022",
+                secondary: "#F1C27D",
+                card: "#1A0B10",
+                border: "#A31621",
+                light: "#FFF1E6",
+                muted: "#C7A9A1",
             },
         },
     },
     plugins: [require("daisyui")],
     daisyui: {
-        themes: ["light", "dark"],
+        themes: ["dark"],
     },
 };

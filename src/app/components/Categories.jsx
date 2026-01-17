@@ -9,7 +9,7 @@ export default function Categories() {
     ]
 
     return (
-        <section className="relative py-20 bg-[#0B1120] overflow-hidden">
+        <section className="relative py-20 bg-[#4d1b1b] overflow-hidden">
             {/* Decorative floating circles */}
             <div className="absolute top-0 left-0 w-64 h-64 bg-purple-700 opacity-20 rounded-full -translate-x-1/2 -translate-y-1/2 animate-pulse"></div>
             <div className="absolute bottom-0 right-0 w-72 h-72 bg-blue-500 opacity-20 rounded-full translate-x-1/2 translate-y-1/2 animate-pulse"></div>
