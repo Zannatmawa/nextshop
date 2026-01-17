@@ -1,0 +1,202 @@
+[
+    {
+        "id": 1,
+        "name": "Galaxy S24 Ultra",
+        "category": "Smartphone",
+        "description": "Flagship smartphone with AMOLED display and 200MP camera.",
+        "price": 1199,
+        "brand": "Samsung",
+        "rating": 4.8,
+        "image": "https://i.ibb.co/4YFQy9v/phone1.png"
+    },
+    {
+        "id": 2,
+        "name": "iPhone 15 Pro",
+        "category": "Smartphone",
+        "description": "Apple A17 chip powered phone with titanium body.",
+        "price": 1299,
+        "brand": "Apple",
+        "rating": 4.9,
+        "image": "https://i.ibb.co/7YwP4gN/phone2.png"
+    },
+    {
+        "id": 3,
+        "name": "Pixel 8",
+        "category": "Smartphone",
+        "description": "Google phone with best-in-class camera and AI features.",
+        "price": 899,
+        "brand": "Google",
+        "rating": 4.7,
+        "image": "https://i.ibb.co/5n7zXbL/phone3.png"
+    },
+    {
+        "id": 4,
+        "name": "MacBook Air M3",
+        "category": "Laptop",
+        "description": "Ultra-thin laptop with Apple M3 chip and Retina display.",
+        "price": 1499,
+        "brand": "Apple",
+        "rating": 4.9,
+        "image": "https://i.ibb.co/f8Y7V1r/laptop1.png"
+    },
+    {
+        "id": 5,
+        "name": "Dell XPS 15",
+        "category": "Laptop",
+        "description": "Premium Windows laptop with Intel i9 processor.",
+        "price": 1799,
+        "brand": "Dell",
+        "rating": 4.6,
+        "image": "https://i.ibb.co/0Jx4p7K/laptop2.png"
+    },
+    {
+        "id": 6,
+        "name": "HP Spectre x360",
+        "category": "Laptop",
+        "description": "Convertible touchscreen laptop with sleek design.",
+        "price": 1599,
+        "brand": "HP",
+        "rating": 4.5,
+        "image": "https://i.ibb.co/1mL3D0P/laptop3.png"
+    },
+    {
+        "id": 7,
+        "name": "Sony WH-1000XM5",
+        "category": "Headphones",
+        "description": "Noise cancelling wireless headphones with premium sound.",
+        "price": 399,
+        "brand": "Sony",
+        "rating": 4.8,
+        "image": "https://i.ibb.co/Tc2d4RM/headphone1.png"
+    },
+    {
+        "id": 8,
+        "name": "AirPods Pro 2",
+        "category": "Headphones",
+        "description": "Apple wireless earbuds with active noise cancellation.",
+        "price": 249,
+        "brand": "Apple",
+        "rating": 4.7,
+        "image": "https://i.ibb.co/y5Z6N4b/headphone2.png"
+    },
+    {
+        "id": 9,
+        "name": "JBL Tune 770NC",
+        "category": "Headphones",
+        "description": "Affordable ANC headphones with long battery life.",
+        "price": 199,
+        "brand": "JBL",
+        "rating": 4.4,
+        "image": "https://i.ibb.co/LxZfDgV/headphone3.png"
+    },
+    {
+        "id": 10,
+        "name": "Apple Watch Series 9",
+        "category": "Smart Watch",
+        "description": "Advanced health tracking smartwatch from Apple.",
+        "price": 499,
+        "brand": "Apple",
+        "rating": 4.8,
+        "image": "https://i.ibb.co/9q7mRr0/watch1.png"
+    },
+    {
+        "id": 11,
+        "name": "Samsung Galaxy Watch 6",
+        "category": "Smart Watch",
+        "description": "Stylish Android smartwatch with AMOLED display.",
+        "price": 349,
+        "brand": "Samsung",
+        "rating": 4.6,
+        "image": "https://i.ibb.co/2dDkKJb/watch2.png"
+    },
+    {
+        "id": 12,
+        "name": "Fitbit Versa 4",
+        "category": "Smart Watch",
+        "description": "Fitness-focused smartwatch with heart-rate monitoring.",
+        "price": 229,
+        "brand": "Fitbit",
+        "rating": 4.3,
+        "image": "https://i.ibb.co/8c9bqGk/watch3.png"
+    },
+    {
+        "id": 13,
+        "name": "Logitech MX Master 3S",
+        "category": "Mouse",
+        "description": "Ergonomic wireless mouse for productivity.",
+        "price": 99,
+        "brand": "Logitech",
+        "rating": 4.8,
+        "image": "https://i.ibb.co/6vP8dKJ/mouse1.png"
+    },
+    {
+        "id": 14,
+        "name": "Razer DeathAdder V3",
+        "category": "Mouse",
+        "description": "High precision gaming mouse with RGB lighting.",
+        "price": 129,
+        "brand": "Razer",
+        "rating": 4.7,
+        "image": "https://i.ibb.co/3r5F7sD/mouse2.png"
+    },
+    {
+        "id": 15,
+        "name": "Corsair K95 RGB",
+        "category": "Keyboard",
+        "description": "Mechanical keyboard with RGB and macro keys.",
+        "price": 199,
+        "brand": "Corsair",
+        "rating": 4.6,
+        "image": "https://i.ibb.co/1n8mK0F/keyboard1.png"
+    },
+    {
+        "id": 16,
+        "name": "Keychron K8 Pro",
+        "category": "Keyboard",
+        "description": "Wireless mechanical keyboard for developers.",
+        "price": 139,
+        "brand": "Keychron",
+        "rating": 4.7,
+        "image": "https://i.ibb.co/ZH5PZpX/keyboard2.png"
+    },
+    {
+        "id": 17,
+        "name": "Anker PowerCore 20000",
+        "category": "Power Bank",
+        "description": "High capacity power bank with fast charging.",
+        "price": 59,
+        "brand": "Anker",
+        "rating": 4.8,
+        "image": "https://i.ibb.co/4j6G3Z8/powerbank1.png"
+    },
+    {
+        "id": 18,
+        "name": "Xiaomi Mi Power Bank 10000",
+        "category": "Power Bank",
+        "description": "Compact and lightweight fast charging power bank.",
+        "price": 35,
+        "brand": "Xiaomi",
+        "rating": 4.5,
+        "image": "https://i.ibb.co/6HJ7x2D/powerbank2.png"
+    },
+    {
+        "id": 19,
+        "name": "Realme 30W Dart Power Bank",
+        "category": "Power Bank",
+        "description": "Fast charging power bank with dual output.",
+        "price": 45,
+        "brand": "Realme",
+        "rating": 4.4,
+        "image": "https://i.ibb.co/N9GmD9X/powerbank3.png"
+    },
+    {
+        "id": 20,
+        "name": "Asus ROG Zephyrus G14",
+        "category": "Laptop",
+        "description": "Powerful gaming laptop with Ryzen 9 and RTX graphics.",
+        "price": 1899,
+        "brand": "Asus",
+        "rating": 4.7,
+        "image": "https://i.ibb.co/yX1mY1g/laptop4.png"
+    }
+]
