@@ -3,6 +3,8 @@
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import Cookies from "js-cookie"
+import { toast } from "react-toastify"
+
 
 export default function Login() {
     const router = useRouter()
@@ -12,17 +14,28 @@ export default function Login() {
     const MOCK_EMAIL = "nextcart@example.com"
     const MOCK_PASSWORD = "password123"
 
+
     const handleSubmit = (e) => {
         e.preventDefault()
 
         if (email === MOCK_EMAIL && password === MOCK_PASSWORD) {
             Cookies.set("auth_token", "mocktoken123", { expires: 1 })
             Cookies.set("user_email", email, { expires: 1 })
+            toast.success("Welcome back! Logging you in...", {
+                position: "top-center",
+                className: "rounded-2xl font-bold uppercase text-[10px] tracking-widest",
+                progressClassName: "bg-[#194a7a]", // Matches your brand color
+            })
 
-            setError("")
-            router.push("/")
+            setTimeout(() => {
+                router.push("/")
+            }, 1500)
+
         } else {
-            setError("Invalid email or password")
+            toast.error("Invalid email or password", {
+                position: "top-center",
+                className: "rounded-2xl font-bold uppercase text-[10px] tracking-widest",
+            })
         }
     }
 

@@ -1,6 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,6 +26,18 @@ export default function RootLayout({ children }) {
         className="bg-[#ffffea] text-[#800022] min-h-screen manrope-font"
       // className="bg-gradient-to-r from-[#38BDF8] via-[#6366F1] to-[#8B5CF6]"
       >
+        <ToastContainer
+          position="top-center"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
         <Header></Header>
         <main>
           {children}
