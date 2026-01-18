@@ -34,36 +34,45 @@ const NavigationBar = () => {
     if (!mounted) return null;
 
     return (
-        <nav className="sticky top-0 z-50 w-full border-b border-slate-100 bg-white/80 backdrop-blur-md">
+        <nav className="sticky top-0 z-50 w-full border-b border-slate-100 bg-blue-900  backdrop-blur-md">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="flex h-16 items-center justify-between">
 
                     {/* Brand */}
-                    <Link href="/" className="text-sm font-black tracking-tighter text-slate-900">
+                    <Link href="/" className="text-sm font-black tracking-tighter text-white">
                         NEXT<span className="text-blue-600">CART</span>
                     </Link>
 
                     {/* Desktop Links (Hidden on Mobile) */}
-                    <div className="hidden md:flex items-center space-x-8">
+                    <div className="hidden md:flex items-center  space-x-8">
                         {links.map((link) => (
                             <Link
                                 key={link.href}
                                 href={link.href}
-                                className={`text-[11px] uppercase tracking-widest font-bold transition-colors hover:text-blue-600 ${pathname === link.href ? 'text-blue-600' : 'text-slate-500'
+                                className={`text-[11px] uppercase tracking-widest font-bold transition-colors hover:text-blue-600 ${pathname === link.href ? 'text-amber-600' : 'text-white'
                                     }`}
                             >
                                 {link.label}
                             </Link>
                         ))}
+                        {isLoggedIn ? (
+                            <>
+                                <Link href="/addtocart" className="text-[10px] font-bold text-slate-400 uppercase tracking-wider hover:text-slate-900">
+                                    + Add Item
+                                </Link>
+
+                            </>
+                        ) : (
+                            <>
+                            </>
+                        )}
                     </div>
 
                     {/* Desktop Actions */}
                     <div className="hidden md:flex items-center space-x-4">
                         {isLoggedIn ? (
                             <>
-                                <Link href="/additem" className="text-[10px] font-bold text-slate-400 uppercase tracking-wider hover:text-slate-900">
-                                    + Add Item
-                                </Link>
+
                                 <button onClick={handleLogout} className="text-[10px] font-bold bg-slate-900 text-white px-4 py-2 rounded-lg uppercase tracking-widest">
                                     Logout
                                 </button>
@@ -99,7 +108,7 @@ const NavigationBar = () => {
                             key={link.href}
                             href={link.href}
                             onClick={() => setMobileMenuOpen(false)}
-                            className="block text-[10px] font-bold uppercase tracking-[0.2em] text-slate-600"
+                            className="block text-[10px] font-bold uppercase tracking-[0.2em] "
                         >
                             {link.label}
                         </Link>
