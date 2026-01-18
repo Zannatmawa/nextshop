@@ -1,38 +1,34 @@
-import Image from 'next/image'
+import React from "react"
 
-export default function Categories() {
+const Categories = () => {
     const categories = [
-        { name: "Electronics", image: "/images/dress.jpg" },
-        { name: "Fashion", image: "/images/jeans.jpg" },
-        { name: "Accessories", image: "/images/man1.jpg" },
-        { name: "Shoes", image: "/images/man2.jpg" },
-        { name: "Watches", image: "/images/top.jpg" },
-        { name: "Home Decor", image: "/images/women1.jpg" },
+        { name: "Smartphones", image: "/images/phone.jpg" },
+        { name: "Laptops", image: "/images/laptop.jpg" },
+        { name: "Headphones", image: "/images/headphones.jpg" },
+        { name: "Smart Watches", image: "/images/watch.jpg" },
+        { name: "Gaming", image: "/images/gaming.jpg" },
+        { name: "Accessories", image: "/images/accessories.jpg" },
     ]
 
     return (
-        <section className="relative py-20  overflow-hidden">
-            <div className="max-w-7xl mx-auto px-6 relative z-10">
-                <h2 className="text-3xl md:text-4xl font-bold  mb-12 text-center">
+        <section className="py-20 my-10 bg-[#3271b0]">
+            <div className="max-w-7xl mx-auto px-6">
+                <h2 className="text-3xl font-bold text-white text-center mb-12">
                     Shop by Category
                 </h2>
 
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-                    {categories.map((cat, index) => (
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                    {categories.map((cat, i) => (
                         <div
-                            key={index}
-                            className="bg-[#111827] rounded-2xl p-6 text-center cursor-pointer transform hover:-translate-y-2 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl relative overflow-hidden"
+                            key={i}
+                            className="bg-white rounded-2xl p-6 text-center hover:scale-105 transition shadow-lg hover:shadow-[#194a7a]/50"
                         >
-                            <div className="w-24 h-24 mx-auto mb-4 rounded-full flex items-center justify-center bg-gradient-to-tr from-purple-600 to-blue-500 shadow-inner overflow-hidden">
-                                <Image
-                                    src={cat.image}
-                                    alt={cat.name}
-                                    width={70}  // size of the image
-                                    height={70}
-                                    className="object-contain rounded-full w-30 h-30"
-                                />
-                            </div>
-                            <h3 className="text-white font-semibold text-lg">{cat.name}</h3>
+                            <img
+                                src={cat.image}
+                                alt={cat.name}
+                                className="w-16 h-16 mx-auto mb-4 object-contain"
+                            />
+                            <h3 className="text-black font-medium">{cat.name}</h3>
                         </div>
                     ))}
                 </div>
@@ -40,3 +36,5 @@ export default function Categories() {
         </section>
     )
 }
+
+export default Categories

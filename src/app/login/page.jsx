@@ -1,24 +1,24 @@
 "use client"
 import React, { useState } from "react"
 import { useRouter } from "next/navigation"
-import toast, { Toaster } from "react-hot-toast"
+// import toast, { Toaster } from "react-hot-toast"
 
 const LoginPage = () => {
     const router = useRouter()
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        if (email && password) {
-            toast.success("Login Successful!")
-            setTimeout(() => {
-                router.push("/") // redirect after toast
-            }, 1000)
-        } else {
-            toast.error("Please enter email and password")
-        }
-    }
+    // const handleSubmit = (e) => {
+    //     e.preventDefault()
+    //     if (email && password) {
+    //         toast.success("Login Successful!")
+    //         setTimeout(() => {
+    //             router.push("/") // redirect after toast
+    //         }, 1000)
+    //     } else {
+    //         toast.error("Please enter email and password")
+    //     }
+    // }
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-[#0B1120]">

@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React from 'react'
-
+//#800022 
 const NavigationBar = () => {
     const pathname = usePathname()
 
@@ -14,7 +14,7 @@ const NavigationBar = () => {
     ]
 
     return (
-        <div className="navbar shadow-lg bg-[#800022] text-white sticky top-0 z-50">
+        <div className="navbar shadow-lg bg-[#194a7a] text-white sticky top-0 z-50">
             {/* Navbar Start */}
             <div className="navbar-start">
                 {/* Mobile Dropdown */}

@@ -1,6 +1,6 @@
 export default function Footer() {
     return (
-        <footer className="footer flex justify-between p-10 bg-[#111827] text-white">
+        <footer className="footer flex justify-between p-10 mt-10 bg-[#194a7a] text-white">
             <div>
                 <span className="footer-title">NextCart</span>
                 <a className="link link-hover">About Us</a>
