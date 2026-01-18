@@ -1,88 +1,104 @@
 "use client"
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import React from 'react'
-//#800022 
+import { usePathname, useRouter } from 'next/navigation'
+import React, { useEffect, useState } from 'react'
+import Cookies from "js-cookie"
+
 const NavigationBar = () => {
-    const pathname = usePathname()
+    const pathname = usePathname();
+    const router = useRouter();
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [mounted, setMounted] = useState(false);
+
+    // Prevent hydration mismatch
+    useEffect(() => {
+        setMounted(true);
+        const token = Cookies.get("auth_token");
+        setIsLoggedIn(!!token);
+    }, []);
+
+    const handleLogout = () => {
+        Cookies.remove("auth_token");
+        Cookies.remove("user_email");
+        setIsLoggedIn(false);
+        router.push("/login");
+    };
 
     const links = [
         { href: '/', label: 'Home' },
         { href: '/items', label: 'Items' },
         { href: '/about', label: 'About' },
         { href: '/services', label: 'Services' },
-    ]
+    ];
+
+    if (!mounted) return null;
 
     return (
-        <div className="navbar shadow-lg bg-[#194a7a] text-white sticky top-0 z-50">
-            {/* Navbar Start */}
-            <div className="navbar-start">
-                {/* Mobile Dropdown */}
-                <div className="dropdown">
-                    <div tabIndex={0} className="btn btn-ghost lg:hidden" aria-label="Menu">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-5 w-5"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="M4 6h16M4 12h8m-8 6h16"
-                            />
-                        </svg>
+        <nav className="sticky top-0 z-50 w-full border-b border-white/10 bg-[#194a7a] backdrop-blur-md text-white">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex h-16 items-center justify-between">
+
+                    {/* Brand Logo */}
+                    <div className="flex-shrink-0 flex items-center">
+                        <Link href="/" className="text-2xl font-black tracking-tighter hover:opacity-80 transition">
+                            NEXT<span className="text-blue-500">CART</span>
+                        </Link>
                     </div>
 
-                    <ul
-                        tabIndex="-1"
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 w-52 p-2 shadow space-y-2"
-                    >
+                    {/* Desktop Navigation */}
+                    <div className="hidden lg:flex items-center space-x-8">
                         {links.map((link) => (
-                            <li key={link.href}>
-                                <Link
-                                    href={link.href}
-                                    className={pathname === link.href ? 'text-yellow-400 font-semibold' : ''}
-                                >
-                                    {link.label}
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-
-                {/* Logo */}
-                <Link href="/" className="btn btn-ghost text-xl">
-                    NextCart
-                </Link>
-            </div>
-
-            {/* Navbar Center (Desktop Menu) */}
-            <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1 space-x-5">
-                    {links.map((link) => (
-                        <li key={link.href}>
                             <Link
+                                key={link.href}
                                 href={link.href}
-                                className={pathname === link.href ? 'text-yellow-400 font-semibold' : ''}
+                                className={`relative text-sm font-medium transition-colors hover:text-blue-400 ${pathname === link.href ? 'text-blue-400' : 'text-gray-300'
+                                    }`}
                             >
                                 {link.label}
+                                {pathname === link.href && (
+                                    <span className="absolute -bottom-[21px] left-0 w-full h-0.5 bg-blue-500 rounded-full" />
+                                )}
                             </Link>
-                        </li>
-                    ))}
-                </ul>
-            </div>
+                        ))}
+                        {isLoggedIn ? (
+                            <div className="flex items-center space-x-3">
+                                <Link href="/addtocart" className="hidden md:block text-sm font-medium hover:text-blue-400">
+                                    Add Product
+                                </Link>
+                            </div>
+                        ) : (
+                            <>
+                            </>
+                        )}
+                    </div>
 
-            {/* Navbar End */}
-            <div className="navbar-end">
-                <Link href="/login" className="btn">
-                    Login
-                </Link>
-            </div>
-        </div>
-    )
-}
+                    {/* Actions */}
+                    <div className="flex items-center space-x-5">
 
-export default NavigationBar
+
+                        {isLoggedIn ? (
+                            <div className="flex items-center space-x-3">
+
+                                <button
+                                    onClick={handleLogout}
+                                    className="bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg text-sm font-semibold transition"
+                                >
+                                    Logout
+                                </button>
+                            </div>
+                        ) : (
+                            <Link
+                                href="/login"
+                                className="bg-blue-600 hover:bg-blue-500 px-6 py-2 rounded-full text-sm font-bold transition-all shadow-lg shadow-blue-500/25"
+                            >
+                                Login
+                            </Link>
+                        )}
+                    </div>
+                </div>
+            </div>
+        </nav>
+    );
+};
+
+export default NavigationBar;
