@@ -19,69 +19,98 @@ export default function AddItem() {
         } else {
             setLoading(false)
         }
-    }, [])
+    }, [router])
 
-    if (loading) return <p className="text-white text-center mt-20">Loading...</p>
+    if (loading) return (
+        <div className="min-h-screen flex items-center justify-center bg-white">
+            <p className="text-[10px] uppercase tracking-widest text-slate-400 animate-pulse">Authenticating...</p>
+        </div>
+    )
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        setMessage(`Item "${itemName}" added successfully!`)
+        setMessage(`"${itemName}" successfully added to catalog.`)
         setItemName("")
         setItemPrice("")
         setItemImage("")
+        setTimeout(() => setMessage(""), 4000)
     }
 
     return (
-        <div className="min-h-screen bg-[#111827] py-20 px-6 flex justify-center">
-            <div className="bg-[#1F2937] p-10 rounded-2xl shadow-lg w-full max-w-lg">
-                <h1 className="text-3xl font-bold text-white mb-6 text-center">Add New Item</h1>
+        <div className="min-h-screen bg-slate-50/50 py-20 px-6 flex justify-center">
+            <div className="bg-white p-8 md:p-12 rounded-[2rem] border border-slate-100 shadow-sm w-full max-w-md">
+
+                <div className="text-center mb-10">
+                    <span className="text-[10px] font-bold text-blue-600 uppercase tracking-[0.2em]">Inventory Management</span>
+                    <h1 className="text-xl font-bold text-slate-900 mt-2">Add New Product</h1>
+                </div>
 
                 {message && (
-                    <p className="bg-green-600 text-white py-2 px-4 rounded mb-4 text-center">{message}</p>
+                    <div className="bg-green-50 border border-green-100 text-green-600 text-[11px] py-3 px-4 rounded-xl mb-6 text-center font-medium">
+                        {message}
+                    </div>
                 )}
 
-                <form onSubmit={handleSubmit} className="space-y-5">
+                <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
-                        <label className="text-gray-300 mb-1 block">Item Name</label>
+                        <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2 block">
+                            Product Designation
+                        </label>
                         <input
                             type="text"
                             value={itemName}
                             onChange={(e) => setItemName(e.target.value)}
-                            className="w-full p-3 rounded-lg bg-gray-800 text-white"
-                            placeholder="Product Name"
+                            className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/5 transition-all outline-none text-xs text-slate-800 placeholder:text-slate-300"
+                            placeholder="e.g. MacBook Air M3"
                             required
                         />
                     </div>
 
-                    <div>
-                        <label className="text-gray-300 mb-1 block">Price ($)</label>
-                        <input
-                            type="number"
-                            value={itemPrice}
-                            onChange={(e) => setItemPrice(e.target.value)}
-                            className="w-full p-3 rounded-lg bg-gray-800 text-white"
-                            placeholder="Price"
-                            required
-                        />
+                    <div className="grid grid-cols-2 gap-4">
+                        <div>
+                            <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2 block">
+                                Value (USD)
+                            </label>
+                            <input
+                                type="number"
+                                value={itemPrice}
+                                onChange={(e) => setItemPrice(e.target.value)}
+                                className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 outline-none text-xs text-slate-800"
+                                placeholder="0.00"
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2 block">
+                                Category
+                            </label>
+                            <select className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 outline-none text-xs text-slate-800 bg-white">
+                                <option>Tech</option>
+                                <option>Fashion</option>
+                                <option>Accessories</option>
+                            </select>
+                        </div>
                     </div>
 
                     <div>
-                        <label className="text-gray-300 mb-1 block">Image URL</label>
+                        <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2 block">
+                            Asset URL
+                        </label>
                         <input
                             type="text"
                             value={itemImage}
                             onChange={(e) => setItemImage(e.target.value)}
-                            className="w-full p-3 rounded-lg bg-gray-800 text-white"
-                            placeholder="https://example.com/product.png"
+                            className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 outline-none text-xs text-slate-800 placeholder:text-slate-300"
+                            placeholder="https://images.unsplash.com/..."
                             required
                         />
                     </div>
 
                     <button
                         type="submit"
-                        className="w-full bg-[#800022] hover:bg-[#a13a3e] text-white py-3 rounded-xl font-bold transition"
+                        className="w-full bg-[#194a7a] hover:bg-slate-900 text-white py-4 rounded-xl text-[10px] font-bold uppercase tracking-[0.2em] transition-all active:scale-[0.98] shadow-lg shadow-blue-900/10 mt-4"
                     >
-                        Add Item
+                        Register Item
                     </button>
                 </form>
             </div>

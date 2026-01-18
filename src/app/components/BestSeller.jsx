@@ -1,10 +1,30 @@
 // Suggested: Use a lighter gray background for the section to make white cards "pop"
 export default function BestSellers() {
     const products = [
-        { name: "Premium Wireless Headphones", price: "$199", image: "/images/headphones.jpg", category: "Electronics" },
-        { name: "Classic Denim Jacket", price: "$89", image: "/images/man3.jpg", category: "Fashion" },
-        { name: "Urban Explorer Backpack", price: "$129", image: "/images/man1.jpg", category: "Accessories" },
-        { name: "Minimalist Leather Shoes", price: "$59", image: "/images/man2.jpg", category: "Shoes" },
+        {
+            name: "Premium Wireless Headphones",
+            price: "$199",
+            image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=800",
+            category: "Electronics"
+        },
+        {
+            name: "Classic Denim Jacket",
+            price: "$89",
+            image: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&q=80&w=800",
+            category: "Fashion"
+        },
+        {
+            name: "Urban Explorer Backpack",
+            price: "$129",
+            image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&q=80&w=800",
+            category: "Accessories"
+        },
+        {
+            name: "Minimalist Leather Shoes",
+            price: "$59",
+            image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&q=80&w=800",
+            category: "Shoes"
+        },
     ]
 
     return (
