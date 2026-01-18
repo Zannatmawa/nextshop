@@ -18,7 +18,7 @@ const HeroSection = () => {
                 </div>
                 <div className="flex justify-center">
                     <img
-                        src="https://i.ibb.co/3r1QwWq/shopping.png"
+                        src="/public/images/women1.jpg"
                         alt="Shopping"
                         className="w-full max-w-md"
                     />

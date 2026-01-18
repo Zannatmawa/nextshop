@@ -1,9 +1,12 @@
 export default function NewArrivals() {
+    // Use the category images for new arrivals
     const products = [
-        { name: "Leather Jacket", price: "$249", image: "https://i.ibb.co/1LxkK6f/jacket.png" },
-        { name: "Bluetooth Speaker", price: "$79", image: "https://i.ibb.co/0J1Y8V6/speaker.png" },
-        { name: "Sunglasses", price: "$49", image: "https://i.ibb.co/YTZ6BqD/sunglasses.png" },
-        { name: "Laptop Backpack", price: "$69", image: "https://i.ibb.co/sbF2YZg/backpack2.png" },
+        { name: "Electronics", price: "$249", image: "/images/dress.jpg" },
+        { name: "Fashion", price: "$79", image: "/images/jeans.jpg" },
+        { name: "Accessories", price: "$49", image: "/images/man1.jpg" },
+        { name: "Shoes", price: "$69", image: "/images/man2.jpg" },
+        { name: "Watches", price: "$199", image: "/images/top.jpg" },
+        { name: "Home Decor", price: "$129", image: "/images/women1.jpg" },
     ]
 
     return (
@@ -12,8 +15,15 @@ export default function NewArrivals() {
                 <h2 className="text-3xl font-bold text-white mb-10 text-center">New Arrivals</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {products.map((prod, i) => (
-                        <div key={i} className="bg-[#111827] rounded-xl p-5 hover:scale-105 transition cursor-pointer">
-                            <img src={prod.image} alt={prod.name} className="w-full h-48 object-contain mb-3" />
+                        <div
+                            key={i}
+                            className="bg-[#111827] rounded-xl p-5 hover:scale-105 transition-transform duration-300 cursor-pointer"
+                        >
+                            <img
+                                src={prod.image}
+                                alt={prod.name}
+                                className="w-full h-48 object-cover mb-3 rounded-lg"
+                            />
                             <h3 className="text-white font-medium">{prod.name}</h3>
                             <p className="text-[#38BDF8] font-semibold mt-1">{prod.price}</p>
                             <button className="btn btn-primary btn-sm mt-3 w-full">Add to Cart</button>

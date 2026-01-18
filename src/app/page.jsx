@@ -14,7 +14,7 @@ export default function Home() {
     <div>
       {/* <ItemCard /> */}
       <HeroSection />
-      <Categories />
+      {/* <Categories /> */}
       <BestSellers />
       <WhyChooseUs />
       <NewArrivals />

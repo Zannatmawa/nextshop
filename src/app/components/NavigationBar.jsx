@@ -14,7 +14,7 @@ const NavigationBar = () => {
     ]
 
     return (
-        <div className="navbar shadow-lg bg-[#800022] sticky top-0 z-50">
+        <div className="navbar shadow-lg bg-[#800022] text-white sticky top-0 z-50">
             {/* Navbar Start */}
             <div className="navbar-start">
                 {/* Mobile Dropdown */}
