@@ -3,9 +3,9 @@ import Link from 'next/link'
 
 const ItemCard = ({ item }) => {
     return (
-        <div className="group bg-white rounded-2xl border border-slate-100 p-4 transition-all duration-300 hover:shadow-xl hover:shadow-slate-200/50">
+        <div className="group bg-white  border-2  rounded-2xl  border-slate-300 p-4 transition-all duration-300 hover:shadow-xl hover:shadow-slate-200/50">
             {/* Image Container with small tag */}
-            <div className="relative w-full h-44 bg-slate-50 rounded-xl overflow-hidden mb-4 flex items-center justify-center">
+            <div className="relative  w-full h-44 bg-slate-50 rounded-xl overflow-hidden mb-4 flex items-center justify-center">
                 <img
                     src={item.image}
                     alt={item.name}
@@ -15,9 +15,7 @@ const ItemCard = ({ item }) => {
                     New
                 </span>
             </div>
-
-            {/* Typography: Kept small and simple */}
-            <div className="px-1">
+            <div className="px-1 ">
                 <h3 className="text-slate-800 font-bold text-sm truncate">{item.name}</h3>
                 <p className="text-slate-400 text-[10px] mt-1 line-clamp-1 leading-relaxed">
                     {item.description}

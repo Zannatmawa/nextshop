@@ -9,16 +9,13 @@ export default function Login() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [error, setError] = useState("")
-
-    // Hardcoded credentials
-    const MOCK_EMAIL = "user@example.com"
+    const MOCK_EMAIL = "nextcart@example.com"
     const MOCK_PASSWORD = "password123"
 
     const handleSubmit = (e) => {
         e.preventDefault()
 
         if (email === MOCK_EMAIL && password === MOCK_PASSWORD) {
-            // Store auth token in cookies (expires in 1 day)
             Cookies.set("auth_token", "mocktoken123", { expires: 1 })
             Cookies.set("user_email", email, { expires: 1 })
 
@@ -30,33 +27,56 @@ export default function Login() {
     }
 
     return (
-        <div className="flex items-center justify-center min-h-screen bg-gray-900">
-            <div className="bg-[#111827] p-10 rounded-2xl shadow-lg w-full max-w-md">
-                <h2 className="text-2xl font-bold text-white mb-6 text-center">Login</h2>
-                <form onSubmit={handleSubmit} className="space-y-5">
-                    <input
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="Email"
-                        className="w-full p-3 rounded-lg bg-gray-800 text-white"
-                        required
-                    />
-                    <input
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        placeholder="Password"
-                        className="w-full p-3 rounded-lg bg-gray-800 text-white"
-                        required
-                    />
+        <div className="flex items-center justify-center min-h-screen bg-slate-50 px-6">
+            <div className="bg-white p-10 md:p-14 rounded-[2.5rem] border border-slate-200 shadow-sm w-full max-w-md">
 
-                    {error && <p className="text-red-500">{error}</p>}
+                <div className="text-center mb-10">
+                    <span className="text-[10px] font-bold text-blue-600 uppercase tracking-[0.3em]">
+                        Welcome Back
+                    </span>
+                    <h2 className="text-3xl font-black text-slate-900 mt-3">Login</h2>
+                </div>
 
-                    <button className="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-lg">
-                        Login
+                <form onSubmit={handleSubmit} className="space-y-4">
+                    <div>
+                        <input
+                            type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            placeholder="Email address"
+                            className="w-full p-4 rounded-2xl bg-slate-50 border border-slate-200 text-slate-900 text-sm outline-none focus:border-blue-500 transition-all"
+                            required
+                        />
+                    </div>
+
+                    <div>
+                        <input
+                            type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            placeholder="Password"
+                            className="w-full p-4 rounded-2xl bg-slate-50 border border-slate-200 text-slate-900 text-sm outline-none focus:border-blue-500 transition-all"
+                            required
+                        />
+                    </div>
+
+                    {error && (
+                        <p className="text-red-500 text-xs font-bold uppercase tracking-wider text-center py-2">
+                            {error}
+                        </p>
+                    )}
+
+                    <button
+                        type="submit"
+                        className="w-full bg-[#194a7a] hover:bg-slate-900 text-white py-4 rounded-2xl font-bold text-sm transition-all active:scale-95 shadow-lg shadow-blue-900/10 mt-4"
+                    >
+                        Sign In
                     </button>
                 </form>
+
+                <p className="text-center mt-8 text-xs text-slate-400">
+                    Test access: <span className="text-slate-600 font-medium">nextcart@example.com / password123</span>
+                </p>
             </div>
         </div>
     )

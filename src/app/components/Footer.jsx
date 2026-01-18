@@ -32,9 +32,7 @@ export default function Footer() {
                     <span className="text-xl font-bold">Follow Us</span>
                     <div className="flex gap-4">
                         <a><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" className="w-6 h-6" /></a>
-                        <a><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" className="w-6 h-6" /></a>
                         <a><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" className="w-6 h-6" /></a>
-                        <a><img src="https://cdn-icons-png.flaticon.com/512/733/733635.png" className="w-6 h-6" /></a>
                     </div>
                 </div>
 
