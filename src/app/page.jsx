@@ -16,7 +16,7 @@ export default function Home() {
       <HeroSection />
       <BestSellers />
       <Categories />
-      {/* <WhyChooseUs /> */}
+      <WhyChooseUs />
       <NewArrivals />
       <Reviews />
       <Newsletter />
